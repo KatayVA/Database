@@ -29,7 +29,7 @@ perfomers_id INTEGER not null references Perfomers(id)
 create table if not exists Tracks (
 id INTEGER primary key references Albums(id),
 track_name VARCHAR(80) not null,
-duration_track time
+duration_track INTEGER not null time(second<=300)  
 );
 
 create table if not exists Collections (
@@ -43,13 +43,3 @@ id SERIAL primary key,
 track_id INTEGER not null references tracks(id),
 collection_id INTEGER not null references collections(id)
 );
-
-
-
-
-
-
-
-
-
-
